@@ -139,10 +139,19 @@ namespace ToolboxTests
 		}
 
 		[Test]
-		public void DeepEquals_NestedLeftIsNUll_NotEquals()
+		public void DeepEquals_NestedRightIsNull_NotEquals()
 		{
 			var d1 = new D {A = new A()};
 			var d2 = new D {A = null};
+			var r = d1.DeepEquals(d2);
+			Assert.That(r, Is.False);
+		}
+
+		[Test]
+		public void DeepEquals_NestedLeftIsNull_NotEquals()
+		{
+			var d1 = new D {A = null};
+			var d2 = new D { A = new A() };
 			var r = d1.DeepEquals(d2);
 			Assert.That(r, Is.False);
 		}

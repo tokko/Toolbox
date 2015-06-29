@@ -20,6 +20,7 @@ namespace Toolbox
 				if(t2prop == null) continue;
 				var v1 = propertyInfo.GetValue(t1);
 				var v2 = t2prop.GetValue(t2);
+				if (v1 == null && v2 != null) return false;
 				if (propertyInfo.PropertyType.IsValueType || propertyInfo.PropertyType.IsPrimitive ||
 				    propertyInfo.PropertyType == typeof(string))
 					if (!v1.Equals(v2))

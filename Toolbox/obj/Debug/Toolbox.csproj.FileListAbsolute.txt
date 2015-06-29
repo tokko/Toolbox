@@ -1,0 +1,5 @@
+c:\users\andre_000\documents\visual studio 2013\Projects\Toolbox\Toolbox\bin\Debug\Toolbox.dll
+c:\users\andre_000\documents\visual studio 2013\Projects\Toolbox\Toolbox\bin\Debug\Toolbox.pdb
+c:\users\andre_000\documents\visual studio 2013\Projects\Toolbox\Toolbox\obj\Debug\Toolbox.csprojResolveAssemblyReference.cache
+c:\users\andre_000\documents\visual studio 2013\Projects\Toolbox\Toolbox\obj\Debug\Toolbox.dll
+c:\users\andre_000\documents\visual studio 2013\Projects\Toolbox\Toolbox\obj\Debug\Toolbox.pdb

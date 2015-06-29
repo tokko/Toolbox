@@ -1,0 +1,11 @@
+c:\Users\andre_000\documents\visual studio 2013\Projects\Toolbox\ToolboxTests\bin\Debug\ToolboxTests.dll
+c:\Users\andre_000\documents\visual studio 2013\Projects\Toolbox\ToolboxTests\bin\Debug\ToolboxTests.pdb
+c:\Users\andre_000\documents\visual studio 2013\Projects\Toolbox\ToolboxTests\bin\Debug\NSubstitute.dll
+c:\Users\andre_000\documents\visual studio 2013\Projects\Toolbox\ToolboxTests\bin\Debug\nunit.framework.dll
+c:\Users\andre_000\documents\visual studio 2013\Projects\Toolbox\ToolboxTests\bin\Debug\Toolbox.dll
+c:\Users\andre_000\documents\visual studio 2013\Projects\Toolbox\ToolboxTests\bin\Debug\Toolbox.pdb
+c:\Users\andre_000\documents\visual studio 2013\Projects\Toolbox\ToolboxTests\bin\Debug\NSubstitute.xml
+c:\Users\andre_000\documents\visual studio 2013\Projects\Toolbox\ToolboxTests\bin\Debug\nunit.framework.xml
+c:\Users\andre_000\documents\visual studio 2013\Projects\Toolbox\ToolboxTests\obj\Debug\ToolboxTests.csprojResolveAssemblyReference.cache
+c:\Users\andre_000\documents\visual studio 2013\Projects\Toolbox\ToolboxTests\obj\Debug\ToolboxTests.dll
+c:\Users\andre_000\documents\visual studio 2013\Projects\Toolbox\ToolboxTests\obj\Debug\ToolboxTests.pdb

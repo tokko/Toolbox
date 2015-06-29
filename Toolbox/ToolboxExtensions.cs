@@ -9,6 +9,7 @@ namespace Toolbox
 			where T1 : class
 			where T2 : class
 		{
+			if (t2 == null) return false;
 			var t1Props = t1.GetType().GetProperties();
 			var t2Props = t2.GetType().GetProperties();
 			if (allProperties && t1Props.Count() != t2Props.Count())

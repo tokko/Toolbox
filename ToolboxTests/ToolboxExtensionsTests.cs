@@ -121,6 +121,14 @@ namespace ToolboxTests
 			Assert.That(r, Is.False);
 		}
 
+		[Test]
+		public void DeepEquals_T2IsNull_NotEquals()
+		{
+			var a = new A();
+			A b = null;
+			var r = a.DeepEquals(b);
+			Assert.That(r, Is.False);
+		}
 		
 	}
 

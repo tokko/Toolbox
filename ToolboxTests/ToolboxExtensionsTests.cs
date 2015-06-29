@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
+using System.ComponentModel.Design;
 using NUnit.Framework;
-using NUnit.Framework.Constraints;
 using Toolbox;
 
 namespace ToolboxTests
@@ -127,6 +126,24 @@ namespace ToolboxTests
 			var a = new A();
 			A b = null;
 			var r = a.DeepEquals(b);
+			Assert.That(r, Is.False);
+		}
+
+		[Test]
+		public void DeepEquals_OnePropertyIsNull_NotEquals()
+		{
+			var a1 = new A {a = "gfa", b = 1};
+			var a2 = new A {a = null, b = 1};
+			var r = a1.DeepEquals(a2);
+			Assert.That(r, Is.False);
+		}
+
+		[Test]
+		public void DeepEquals_NestedLeftIsNUll_NotEquals()
+		{
+			var d1 = new D {A = new A()};
+			var d2 = new D {A = null};
+			var r = d1.DeepEquals(d2);
 			Assert.That(r, Is.False);
 		}
 		

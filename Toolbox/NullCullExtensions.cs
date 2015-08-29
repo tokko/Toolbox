@@ -12,8 +12,14 @@ namespace Toolbox
 		public static T NullCull<T>(this T src) where T : class
 		{
 			var props =
-				typeof(T).GetProperties().Where(p => !p.PropertyType.IsPrimitive && !p.PropertyType.IsValueType && p.GetValue(src, null) == null).ToList();
-			props.ForEach(prop => prop.SetValue(src, Instantiate(prop.PropertyType), null));
+				src.GetType().GetProperties().Where(p => !p.PropertyType.IsPrimitive && !p.PropertyType.IsValueType && p.GetValue(src, null) == null).ToList();
+			props.ForEach(prop =>
+			{
+				var value = Convert.ChangeType(Instantiate(prop.PropertyType), prop.PropertyType);
+				value.NullCull();
+				prop.SetValue(src, value, null);
+			});
+
 			return src;
 		}
 

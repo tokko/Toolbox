@@ -27,6 +27,23 @@ namespace ToolboxTests
 		}
 
 		[Test]
+		public static void NullCull_ComplexTypeInObjectVariable_InitializedCorrectly()
+		{
+			object o = Activator.CreateInstance(typeof(ComplexTypes));
+			o.NullCull();
+			var ct = (ComplexTypes) o;
+			Assert.NotNull(ct.PrimitiveTypes);
+		}
+		[Test]
+		public static void NullCull_ComplexType_InitializedRecursively()
+		{
+			var ct = new ComplexStringTypes();
+			ct.NullCull();
+			Assert.NotNull(ct.StringTypes);
+			Assert.NotNull(ct.StringTypes.S);
+		}
+
+		[Test]
 		public static void NullCull_ComplextType_IsSetToDefaultOfObject()
 		{
 			var ct = new ComplexTypes();
@@ -53,6 +70,11 @@ namespace ToolboxTests
 		private class StringTypes
 		{
 			public string S { get; set; }
+		}
+
+		private class ComplexStringTypes
+		{
+			public StringTypes StringTypes { get; set; }
 		}
 		private class ComplexTypes
 		{

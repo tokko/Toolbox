@@ -9,3 +9,14 @@ c:\Users\andre_000\documents\visual studio 2013\Projects\Toolbox\ToolboxTests\bi
 c:\Users\andre_000\documents\visual studio 2013\Projects\Toolbox\ToolboxTests\obj\Debug\ToolboxTests.csprojResolveAssemblyReference.cache
 c:\Users\andre_000\documents\visual studio 2013\Projects\Toolbox\ToolboxTests\obj\Debug\ToolboxTests.dll
 c:\Users\andre_000\documents\visual studio 2013\Projects\Toolbox\ToolboxTests\obj\Debug\ToolboxTests.pdb
+C:\Users\Andreas\Source\Repos\Toolbox\ToolboxTests\bin\Debug\ToolboxTests.dll
+C:\Users\Andreas\Source\Repos\Toolbox\ToolboxTests\bin\Debug\ToolboxTests.pdb
+C:\Users\Andreas\Source\Repos\Toolbox\ToolboxTests\bin\Debug\NSubstitute.dll
+C:\Users\Andreas\Source\Repos\Toolbox\ToolboxTests\bin\Debug\nunit.framework.dll
+C:\Users\Andreas\Source\Repos\Toolbox\ToolboxTests\bin\Debug\Toolbox.dll
+C:\Users\Andreas\Source\Repos\Toolbox\ToolboxTests\bin\Debug\Toolbox.pdb
+C:\Users\Andreas\Source\Repos\Toolbox\ToolboxTests\bin\Debug\NSubstitute.xml
+C:\Users\Andreas\Source\Repos\Toolbox\ToolboxTests\bin\Debug\nunit.framework.xml
+C:\Users\Andreas\Source\Repos\Toolbox\ToolboxTests\obj\Debug\ToolboxTests.csprojResolveAssemblyReference.cache
+C:\Users\Andreas\Source\Repos\Toolbox\ToolboxTests\obj\Debug\ToolboxTests.dll
+C:\Users\Andreas\Source\Repos\Toolbox\ToolboxTests\obj\Debug\ToolboxTests.pdb

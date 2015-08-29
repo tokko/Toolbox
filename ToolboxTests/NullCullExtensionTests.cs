@@ -59,12 +59,26 @@ namespace ToolboxTests
 		}
 
 		[Test]
-		public static void NullCull_ComplextTypeAlreadyHasValue_IsIgnored()
+		public static void NullCull_ComplexTypeAlreadyHasValue_IsIgnored()
 		{
 			var ct = new ComplexTypes{PrimitiveTypes = new PrimitiveTypes{i = 5}};
 			ct.NullCull();
 			Assert.NotNull(ct.PrimitiveTypes);
 			Assert.That(ct.PrimitiveTypes.i, Is.EqualTo(5));
+		}
+
+		[Test]
+		public static void NullCull_ListType_InitialzedCorrectly()
+		{
+			var lt = new ListTypes();
+			lt.NullCull();
+			Assert.NotNull(lt.List);
+			Assert.That(lt.List.GetType(), Is.EqualTo(typeof(List<string>)));
+		}
+
+		private class ListTypes
+		{
+			public List<string> List { get; set; }
 		}
 
 		private class StringTypes

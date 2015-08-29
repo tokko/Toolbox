@@ -106,7 +106,7 @@ namespace ToolboxTests
 		public static void NullCull_AbstractType_Initialized()
 		{
 			var gt = new GenericClass<AbstractType>();
-			Assert.Throws<ArgumentException>(() => gt.NullCull());
+			Assert.Throws<NotSupportedException>(() => gt.NullCull());
 		}
 
 		private abstract class AbstractType

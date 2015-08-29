@@ -49,7 +49,7 @@ namespace Toolbox
 				arg = GetDescendantType(arg);
 			}
 			else if (arg.IsAbstract)
-				throw new ArgumentException("Abstract classes are not supported by current NullCull implementation");
+				throw new NotSupportedException("Abstract classes are not supported by current NullCull implementation");
 
 			var ctor = arg.GetConstructors().First();
 			var args = ctor.GetParameters().Select(a => Instantiate(a.ParameterType)).ToArray();

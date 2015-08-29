@@ -76,6 +76,17 @@ namespace ToolboxTests
 			Assert.That(lt.List.GetType(), Is.EqualTo(typeof(List<string>)));
 		}
 
+		[Test]
+		public static void NullCull_GenericPrimitive_IsInitilized()
+		{
+			var gt = new GenericClass<string>();
+			gt.NullCull();
+			Assert.That(gt.t, Is.EqualTo(string.Empty));
+		}
+		private class GenericClass<T>
+		{
+			public T t { get; set; }
+		}
 		private class ListTypes
 		{
 			public List<string> List { get; set; }

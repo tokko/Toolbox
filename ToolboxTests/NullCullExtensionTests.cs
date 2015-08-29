@@ -102,6 +102,13 @@ namespace ToolboxTests
 			Assert.True(typeof(List<string>) == et.Enumerable.GetType());
 		}
 
+		[Test]
+		public static void NullCull_AbstractType_Initialized()
+		{
+			var gt = new GenericClass<AbstractType>();
+			Assert.Throws<ArgumentException>(() => gt.NullCull());
+		}
+
 		private abstract class AbstractType
 		{
 			public string S { get; set; }

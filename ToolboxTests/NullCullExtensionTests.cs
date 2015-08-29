@@ -77,12 +77,22 @@ namespace ToolboxTests
 		}
 
 		[Test]
-		public static void NullCull_GenericPrimitive_IsInitilized()
+		public static void NullCull_GenericPrimitive_IsInitialized()
 		{
 			var gt = new GenericClass<string>();
 			gt.NullCull();
 			Assert.That(gt.t, Is.EqualTo(string.Empty));
 		}
+
+		[Test]
+		public static void NullCull_GenericComplex_IsInitialized()
+		{
+			var gt = new GenericClass<ComplexStringTypes>();
+			gt.NullCull();
+			Assert.NotNull(gt.t);
+			Assert.True(gt.t.StringTypes.S == string.Empty);
+		}
+
 		private class GenericClass<T>
 		{
 			public T t { get; set; }

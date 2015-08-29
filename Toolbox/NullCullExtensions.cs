@@ -52,7 +52,7 @@ namespace Toolbox
 				throw new NotSupportedException("Abstract classes are not supported by current NullCull implementation");
 
 			var ctor = arg.GetConstructors().First();
-			var args = ctor.GetParameters().Select(a => Instantiate(a.ParameterType)).ToArray();
+			var args = ctor.GetParameters().Select(a => Instantiate(a.ParameterType).NullCull()).ToArray();
 			return ctor.Invoke(args);
 		}
 

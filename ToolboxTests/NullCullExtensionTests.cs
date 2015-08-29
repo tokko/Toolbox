@@ -116,6 +116,34 @@ namespace ToolboxTests
 			Assert.Throws<NotImplementedException>(() => ut.NullCull());
 		}
 
+		[Test]
+		public static void NullCull_WithConstructor_Initialized()
+		{
+			var ct = new GenericClass<ConstructorTypes>();
+			ct.NullCull();
+			Assert.NotNull(ct.t);
+			Assert.True(ct.t.S == string.Empty);
+			Assert.True(ct.t.S1 == string.Empty);
+			Assert.NotNull(ct.t.ComplexStringTypes);
+			Assert.NotNull(ct.t.ComplexStringTypes1);
+			Assert.True(ct.t.ComplexStringTypes.StringTypes.S == string.Empty);
+			Assert.True(ct.t.ComplexStringTypes1.StringTypes.S == string.Empty);
+			
+		}
+
+		private class ConstructorTypes
+		{
+			public string S { get; set; }
+			public string S1 { get; set; }
+			public ComplexStringTypes ComplexStringTypes { get; set; }
+			public ComplexStringTypes ComplexStringTypes1 { get; set; }
+
+			public ConstructorTypes(string s, ComplexStringTypes pt)
+			{
+				S = s;
+				ComplexStringTypes = pt;
+			}
+		}
 		private interface IInterface{}
 
 		private class UnBoundInterfaceTypes

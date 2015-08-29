@@ -93,6 +93,23 @@ namespace ToolboxTests
 			Assert.True(gt.t.StringTypes.S == string.Empty);
 		}
 
+		[Test]
+		public static void NullCull_IEnumerable_IsInitializedToList()
+		{
+			var et = new EnumerableTypes();
+			et.NullCull();
+			Assert.NotNull(et.Enumerable);
+			Assert.True(typeof(List<string>) == et.Enumerable.GetType());
+		}
+
+		private abstract class AbstractType
+		{
+			public string S { get; set; }
+		}
+		private class EnumerableTypes
+		{
+			public IEnumerable<string> Enumerable { get; set; }
+		}
 		private class GenericClass<T>
 		{
 			public T t { get; set; }

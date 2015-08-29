@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -20,13 +21,17 @@ namespace Toolbox
 						.ToList();
 				props.ForEach(prop =>
 				{
-					var value = Convert.ChangeType(Instantiate(prop.PropertyType), prop.PropertyType);
+					var value = Instantiate(prop.PropertyType);
 					value.NullCull();
 					prop.SetValue(src, value, null);
 				});
 				return src;
 			}
-			catch (TargetParameterCountException)
+			catch (TargetParameterCountException) //modifying indexable properties, should ignore these
+			{
+				return null;
+			}
+			catch (InvalidOperationException) //there are no constructors
 			{
 				return null;
 			}
@@ -39,9 +44,23 @@ namespace Toolbox
 			if (arg.IsValueType || arg.IsPrimitive)
 				return 0;
 			if (arg == typeof (string)) return string.Empty;
+			if (arg.IsInterface)
+			{
+				arg = GetDescendantType(arg);
+			}
 			var ctor = arg.GetConstructors().First();
 			var args = ctor.GetParameters().Select(a => Instantiate(a.ParameterType)).ToArray();
 			return ctor.Invoke(args);
+		}
+
+		private static Type GetDescendantType(Type type)
+		{
+			if (type == typeof(IEnumerable<>).MakeGenericType(type.GetGenericArguments()))
+			{
+				var listType = typeof (List<>).MakeGenericType(type.GetGenericArguments());
+				return listType;
+			}
+			throw new NotImplementedException("Interface " + type.ToString() + " is not bound to a concrete class");
 		}
 	}
 }

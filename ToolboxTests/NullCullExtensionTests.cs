@@ -25,6 +25,14 @@ namespace ToolboxTests
 			st.NullCull();
 			Assert.That(st.S, Is.EqualTo(string.Empty));
 		}
+
+		[Test]
+		public static void NullCull_ComplextType_IsSetToDefaultOfObject()
+		{
+			var ct = new ComplexTypes();
+			ct.NullCull();
+			Assert.NotNull(ct.PrimitiveTypes);
+		}
 		[Test]
 		public static void NullCull_StringAlreadyHasValue_IsIgnored()
 		{

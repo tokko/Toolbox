@@ -19,6 +19,13 @@ namespace ToolboxTests
 		}
 
 		[Test]
+		public static void NullCull_StringIsNull_IsSetToEmptyString()
+		{
+			var st = new StringTypes();
+			st.NullCull();
+			Assert.That(st.S, Is.EqualTo(string.Empty));
+		}
+		[Test]
 		public static void NullCull_StringAlreadyHasValue_IsIgnored()
 		{
 			var st = new StringTypes {S = "test"};

@@ -15,9 +15,22 @@ namespace ToolboxTests
 		{
 			var pt = new PrimitiveTypes{i = 5};
 			pt.NullCull();
-			Assert.AreNotEqual(pt.i, 0);
+			Assert.That(pt.i, Is.EqualTo(5));
 		}
 
+		[Test]
+		public static void NullCull_ComplextTypeAlreadyHasValue_IsIgnored()
+		{
+			var ct = new ComplexTypes{PrimitiveTypes = new PrimitiveTypes{i = 5}};
+			ct.NullCull();
+			Assert.NotNull(ct.PrimitiveTypes);
+			Assert.That(ct.PrimitiveTypes.i, Is.EqualTo(5));
+		}
+
+		private class ComplexTypes
+		{
+			public PrimitiveTypes PrimitiveTypes { get; set; }
+		}
 		private class PrimitiveTypes
 		{
 			public int i { get; set; }

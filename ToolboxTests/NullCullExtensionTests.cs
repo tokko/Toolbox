@@ -109,6 +109,19 @@ namespace ToolboxTests
 			Assert.Throws<NotSupportedException>(() => gt.NullCull());
 		}
 
+		[Test]
+		public static void NullCull_UnboundInterface_ThrowsException()
+		{
+			var ut = new UnBoundInterfaceTypes();
+			Assert.Throws<NotImplementedException>(() => ut.NullCull());
+		}
+
+		private interface IInterface{}
+
+		private class UnBoundInterfaceTypes
+		{
+			public IInterface Comparable { get; set; }
+		}
 		private abstract class AbstractType
 		{
 			public string S { get; set; }

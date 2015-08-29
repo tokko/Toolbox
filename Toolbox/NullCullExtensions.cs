@@ -58,10 +58,13 @@ namespace Toolbox
 
 		private static Type GetDescendantType(Type type)
 		{
-			if (type == typeof(IEnumerable<>).MakeGenericType(type.GetGenericArguments()))
+			if (type.GetGenericArguments().Any())
 			{
-				var listType = typeof (List<>).MakeGenericType(type.GetGenericArguments());
-				return listType;
+				if (type == typeof (IEnumerable<>).MakeGenericType(type.GetGenericArguments()))
+				{
+					var listType = typeof (List<>).MakeGenericType(type.GetGenericArguments());
+					return listType;
+				}
 			}
 			throw new NotImplementedException("Interface " + type.ToString() + " is not bound to a concrete class");
 		}
